@@ -1,11 +1,17 @@
 # Salty Carrots
 Salt Stack based provisioning for Carrot Creative servers
 
-Add all your public SSH keys to `ssh/keys`, they will be included automatically.
+Add all your public SSH keys to `salt/ssh/keys`, they will be included
+automatically. This is configured to deny all password auth, so public-key
+auth is the only way to access the server.
 
-You should remove that and put your key there instead.
+The default username is `slang`, which can be changed in `pillar/users.sls`.
+The root user is disabled for security.
 
-The default username is `slang`, and the password is `core2062` (changing the username is kinda hard, but the password can be changed in `salt/users/init.sls`). However, you need to use ssh keys to actually access it because it's configured to deny password based authentication.
+The default password is `core2062` which can be changed in
+`pillar/password_hash.sls`. Since password auth is disabled, this password
+probably doesn't need to be a secret - the only place you will use it is for
+`sudo` (not for logging into the system).
 
 setup script:
 
