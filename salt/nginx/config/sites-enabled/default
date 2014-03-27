@@ -5,6 +5,6 @@ server {
   index index.html index.htm;
 
   location / {
-    root /data/www;
+    root /var/www/default/current/public;
   }
 }
