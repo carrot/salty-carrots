@@ -5,7 +5,7 @@ Add all your public SSH keys to `salt/ssh/keys`, they will be included
 automatically. This is configured to deny all password auth, so public-key
 auth is the only way to access the server.
 
-The default username is `slang`, which can be changed in `pillar/users.sls`.
+The default username is `carrot`, which can be changed in `pillar/users.sls`.
 The root user is disabled for security.
 
 The default password is `core2062` which can be changed in
