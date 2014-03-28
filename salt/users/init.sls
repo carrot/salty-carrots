@@ -3,6 +3,7 @@ root:
   user.present:
     - password: !
 
+# setup the non-root user we'll be using
 {{ pillar['username'] }}:
   user.present:
     - home: /home/{{ pillar['username'] }}
@@ -12,6 +13,7 @@ root:
       - sudo
       - www-data
 
+# add a couple custom aliases to the shell
 /home/{{ pillar['username'] }}/.bashrc:
   file.managed:
     - source: salt://users/.bashrc
