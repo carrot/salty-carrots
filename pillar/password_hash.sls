@@ -1,8 +1,7 @@
 #!py
 from crypt import crypt
-from bcrypt import gensalt
+import os
 
 def run():
     password = 'core2062'
-    salt = gensalt()
-    return {'password_hash': crypt(password, '\$6\$%s\$' % salt)}
+    return {'password_hash': crypt(password, '$6$%s$' % os.urandom(16).encode('base_64'))}
