@@ -12,7 +12,7 @@
   file.directory:
     - makedirs: True
 
-/var/www:
+/var/www/default/current/public:
   file.directory:
     - makedirs: True
 
